@@ -11,3 +11,4 @@ const reportWebVitals = onPerfEntry => {
 };
 
 export default reportWebVitals;
+// 用于测量网页性能的工具，如果需要测性能，还需要加很多的代码
