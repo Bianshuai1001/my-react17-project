@@ -19,3 +19,34 @@
 然后代理服务器会将所有请求转发到后端服务器，进而绕开同源策略，获得后端服务器的数据
 
 第二种配置代理的方式在src/setupProxy.js文件中配置
+
+
+## github搜索案例相关知识点
+1.设计状态时要考虑全面，例如带有网络请求的组件，要考虑请求失败怎么办
+2.ES6小知识点:解构赋值+重命名
+    let obj = {a:{b:1})
+    const{a} = obj;// 传统解构赋值
+    const{a:{b}}= obj; // 连续解构赋值
+    const{a:{b:value}}= obj;  // 连续解构赋+重命名
+3.消息订阅与发布机制
+    1.先订阅，再发布(理解:有一种隔空对话的感觉)
+    2.适用于任意组件问通信
+    3.要在组件的componentWillUnmount中取消订阅,在componentDidMount中订阅
+4.fetch发送请求(关注分离的设计思想)
+    try{
+        const response= await fetch(`/api1/search/users2?q=${keyWord}`)
+        const data = await response.json()
+        console.log(data);
+    } catch (error){
+        console.log('请求出错',error)
+    };
+
+## 路由原理
+    紧握BOM身上的History 对象
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/history/4.7.2/history.js"></scr<script type="text/javascript">
+    let history = History.createBrowserHistory() //方法1, 直接使用H5推出的history身上的APi
+    let history = History.createHashHistory() //方法二. hash值 (会产生锚点路由)
+
+    简单来说就是history对象身上的APi（listen）, 可以监听路由变化, 可以根据路由变化渲染对应的组件
+
