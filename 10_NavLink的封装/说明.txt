@@ -1,0 +1,18 @@
+本节讲述 NavLink 的二次封装，减少冗余代码
+    本节重点：
+            1. 二次封装，使用的还是NavLink，只是为了减少冗余代码，增加可读性
+            2. 子组件获取父组件的标签体内容
+                  父组件的标签体内容是子组件props中children字段的值；注意传值不要覆盖children
+            3. 使用 NavLink 时，给 NavLink 添加标签体内容，或绑定children属性，实现效果是一样的
+
+
+
+定义：（子）（或见封装组件）
+  <NavLink {...this.props} className="menu-item" activeClassName="active">
+    {/* children 是子组件或者是标签体内容，用于渲染导航链接的文本 */}
+    {this.props.children}
+  </NavLink>
+  还可简写为：
+    <NavLink {...this.props} className="menu-item" activeClassName="active" />
+使用：（父）
+  <MyNavLink to="/home">Home</MyNavLink>

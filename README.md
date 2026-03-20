@@ -50,3 +50,7 @@
 
     简单来说就是history对象身上的APi（listen）, 可以监听路由变化, 可以根据路由变化渲染对应的组件
 
+## NavLink与封装NavLink
+1.NavLink可以实现路由链接的高亮，通过activeClassName指定样式名
+2.标签体内容是一个特殊的标签属性
+3.通过this.props.children可以获取标签体内容；

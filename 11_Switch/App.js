@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Header from './components/Header'
 import MyNavLink from './components/MyNavLink/MyNavLink'
+import Hello from './components/Hello'
 
 import './index.css'
 
@@ -31,6 +32,7 @@ export default class App extends Component {
             </Switch>
           </div>
         </div>
+        <Hello>hello 组件标签体</Hello>
       </div>
     )
   }

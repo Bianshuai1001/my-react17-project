@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import { NavLink,  Route, Switch } from 'react-router-dom'
+import { NavLink,  Route } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 import Header from './components/Header'
 import MyNavLink from './components/MyNavLink/MyNavLink'
+import Hello from './components/Hello'
 
 import './index.css'
 
@@ -17,6 +18,9 @@ export default class App extends Component {
         <Header />
         <div className="flex">
           <div className="menu flex flex-column">
+            {/* <NavLink to="/home" activeClassName="active" className="menu-item">
+              Home
+            </NavLink> */}
             <MyNavLink to="/home" activeClassName="active" className="menu-item">
               Home
             </MyNavLink>
@@ -25,12 +29,11 @@ export default class App extends Component {
             </MyNavLink>
           </div>
           <div className="content">
-            <Switch>
-              <Route path="/home" component={Home} />
-              <Route path="/about" component={About} />
-            </Switch>
+            <Route path="/home" component={Home} />
+            <Route path="/about" component={About} />
           </div>
         </div>
+        <Hello>hello 组件标签体</Hello>
       </div>
     )
   }

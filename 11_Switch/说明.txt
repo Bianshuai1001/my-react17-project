@@ -1,0 +1,11 @@
+本节讲述 路由的Switch
+
+由于路由匹配的规则是，逐个匹配，即便匹配成功，还会继续向下匹配直至路由的结束
+这样就会有一个效率问题，另外正常的路由表，也不会映射两个，那这样效率就更浪费了
+解决的方法就是，在所有路由外侧包裹一个Switch
+包裹之后，路由匹配成功后即停止
+
+<Switch>
+  <Route path="/home" component={Home} />
+  <Route path="/about" component={About} />
+</Switch>

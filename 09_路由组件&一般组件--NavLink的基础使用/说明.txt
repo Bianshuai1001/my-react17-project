@@ -1,0 +1,47 @@
+本src主要说明：路由组件和一般组件的放置规范
+
+路由组件： 路由链接所绑定的组件 如：Home
+一般组件： 局部功能组件，可复用 例如：Header组件
+
+两者的具体比较：
+  1.写法不同:
+    一般组件: <Demo/>
+    路由组件: <Route path="/demo”component={Demo}/>
+  2.存放位置不同:
+    一般组件: components 文件夹下
+    路由组件:pages文件夹下
+  3.接收到的props不同:
+    一般组件: 写组件标签时传递了什么，就能收到什么
+    路由组件： 接收到三个固定的属性
+
+    history:
+      action:"PUSH"
+      block: f block(prompt)
+      createHref:f createHref(location)
+      go:f go(n)
+      goBack:f goBack()
+      goForward:f goForward()
+      length: 2
+      listen: f listen(listener)
+      location: {pathname:"/about", search: hash: "", state: undefined, key: "znwrid"}
+      push: f push(path, state)
+      replace: f replace(path, state)
+
+    location:
+      hash:
+      key: "znwrid"
+      pathname:"/about"
+      search:
+      state: undefined
+
+    match:
+      isExact: true
+      params: {}
+      path:"/about"
+      url: "/about"
+
+
+菜单的高亮效果使用，使用NavLink加自定义高亮类名来实现
+    <NavLink to="/home" activeClassName="active" className="menu-item">
+      Home
+    </NavLink>
